@@ -9,20 +9,8 @@
      <a class="btn btn-primary" href="{{route('students.index')}}">Back</a>
     </div>
 </div> 
-
-@if ($error->any())
-    <div class="alert alert-danger">
-        <strong>Whoops!</strong> There were some problems with your input. <br><br>
-        <ul>
-            @foreach ($error->all() as $error)
-            <li>{{error}}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
 <form action="{{route('students.update',$student->id)}}" method="POST">
     @csrf
-    @method(PUT)
 
     <div class="row">
         <div class="col-xs-sm-12 col-md-12">
@@ -41,6 +29,7 @@
             <strong>Fee</strong>
             <input type="text" name="fee" value="{{$student->fee}}" class="form-control" placeholder="Fee">
         </div>
+        <br>
         <div class="col-xd-12 col-sm-12 col-md-12 text-center">
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
