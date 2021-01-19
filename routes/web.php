@@ -13,7 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/test', function () {
+    return new App\Mail\Contact([
+      'nom' => 'Durand',
+      'email' => 'durand@chezlui.com',
+      'message' => 'Je voulais vous dire que votre site est magnifique !'
+      ]);
 });
-Route::resource('students','StudentsController');
